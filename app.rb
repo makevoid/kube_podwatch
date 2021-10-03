@@ -9,4 +9,5 @@ p pods
 client.watch_pods do |notice|
   # process notice data
   puts notice
+  notify_slack_webhook
 end
