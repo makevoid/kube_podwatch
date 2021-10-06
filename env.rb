@@ -7,7 +7,7 @@ include SlackWebhook
 AWS_PROFILE = "default"
 # AWS_PROFILE = "projectname"
 
-EKS_CLUSTER_NAME = "eks-test"
+EKS_CLUSTER_NAME = "heni-env-03-eks"
 
 AWS_REGION = "eu-west-3"
 
@@ -25,7 +25,7 @@ EKSCTL_BIN_PATH = "/usr/local/bin/eksctl"
 # eksctl get nodegroup --region eu-west-3 --cluster eks-test
 
 def get_eks_endpoint
-  output = `aws eks describe-cluster --name eks-test --region eu-west-3 | jq -r .cluster.endpoint`
+  output = `aws eks describe-cluster --name #{EKS_CLUSTER_NAME} --region eu-west-3 | jq -r .cluster.endpoint`
   output.strip!
   puts "eks endpoint: #{output}"
   output
