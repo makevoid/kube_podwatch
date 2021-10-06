@@ -1,3 +1,0 @@
-source "https://rubygems.org"
-
-gem "k8y", git: "git@github.com:tsontario/k8y"
